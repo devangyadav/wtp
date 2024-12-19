@@ -1,0 +1,161 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  background-image: radial-gradient(circle, #333333, #000000);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+h1 {
+  transform: skew(-12deg);
+  font-family: "Sarpanch", sans-serif;
+  font-size: 8vmin;
+  margin: 0;
+  padding: 20px;
+  color: #1d9099;
+  text-shadow: 0.04em 0.02em 0 #E79C10, -0.01em -0.05em 0 #D53A33;
+}
+
+.hidden {
+  display: none;
+}
+
+.shadowed {
+  filter: blur(8px);
+  opacity: 0.1;
+}
+
+#result {
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  width: 25em;
+  height: 30rem;
+  object-fit: cover;
+  font-size: 2rem;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.hint {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
+.choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  --c: #cc333f;
+  --b: 0.1em;
+  --d: 5px;
+  --h: 1.2em;
+  --_s: calc(var(--d) + var(--b));
+
+  color: #0000;
+  text-shadow: 0 calc(-1 * var(--_t, 0em)) var(--c), 0 calc(var(--h) - var(--_t, 0em)) #ffffff;
+  border: solid #0000;
+  overflow: hidden;
+  border-width: var(--b) var(--_s) var(--_s) var(--b);
+  background: linear-gradient(var(--c) 0 0) -1px 100% / 101% var(--_p, 0%) no-repeat,
+    conic-gradient(from -90deg at right var(--d) bottom var(--d),
+      #0000 90deg,
+      rgb(255 255 255 / 0.3) 0 225deg,
+      rgb(255 255 255 / 0.6) 0) border-box,
+    conic-gradient(at right var(--_s) bottom var(--_s),
+      var(--c) 270deg,
+      #0000 0) 100% 100% / calc(100% - var(--b)) calc(100% - var(--b)) border-box;
+  transform: translate(0, 0);
+  clip-path: polygon(0% 0%,
+      calc(100% - var(--d)) 0%,
+      100% var(--d),
+      100% 100%,
+      var(--d) 100%,
+      0 calc(100% - var(--d)));
+  --_t: var(--h);
+  --_p: 105%;
+
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #E79C10;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 20em;
+    height: 25rem;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 10vw;
+  }
+
+  #result {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 12vw;
+  }
+
+  .hint {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}

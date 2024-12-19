@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WTP</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <button onclick="refreshPage()">New</button>
+    <div class="header">
+        <h1>Who's that politician?</h1>
+    </div>
+    
+    <audio id="audio" preload="auto">
+        <source src="audio/pokemon.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="card">
+        <img id="image" src="images/image1.jpg" alt="Shadowed Image" class="shadowed">
+      
+        <img id="fullImage" src="images/image1.jpg" alt="Full Image" class="hidden">
+        
+        <div class="hint" id="hint">
+            <b>Hint:</b> loading.....
+        </div>
+    </div>
+
+    <div class="choice">
+        <button onclick="guessImage('modi')">modi</button>
+        <button onclick="guessImage('rahul')">rahul</button>
+        <button onclick="guessImage('akhilesh')">amit</button>
+        <button onclick="guessImage('kejriwal')">kejriwal</button>
+    </div>
+
+    <p id="result"></p>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
