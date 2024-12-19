@@ -26,9 +26,9 @@ let correctImageKey = `image${Math.floor(Math.random() * 4) + 1}`;
 let correctCreator = images[correctImageKey].creator;
 let hintText = images[correctImageKey].hint;
 
+document.getElementById("audio").play();
 document.getElementById("image").src = images[correctImageKey].src;
 document.getElementById("fullImage").src = images[correctImageKey].src;
-document.getElementById("audio").play();
 document.getElementById("hint").textContent = `Hint: ${hintText}`;
 function guessImage(guess) {
     if (guess === correctCreator) {
